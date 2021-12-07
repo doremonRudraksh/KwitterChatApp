@@ -22,5 +22,16 @@ const firebaseConfig = {
       });
 
       localStorage.setItem("room_name", room_name);
+      window.location = "kwitter_page.html";
 
 }
+
+   function getData() {firebase.database().ref("/").on('value', function(snapshot) {document.getElementById("output").innerHTML = "";snapshot.forEach(function(childSnapshot) {childKey  = childSnapshot.key;
+       Room_names = childKey;
+      //Start code
+      console.log("Room Names -" + Room_names );
+      row = "<div id= "+ Room_names + " class='room_name' onclick='redirectToRoomName(this.id)'>#"+Room_names+"  </div> <hr>"; 
+      document.getElementById("output").innerHTML += row;
+      //End code
+      });});}
+getData();
