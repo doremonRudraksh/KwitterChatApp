@@ -1,0 +1,13 @@
+#msg:hover{
+    background-color: brown;
+    color: white;
+    border: dashed, blue ;
+}
+
+body{
+    background-color: blanchedalmond;
+}
+#button{
+    width: 100px;
+}
+
